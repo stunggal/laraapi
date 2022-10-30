@@ -9,10 +9,19 @@ class index extends Controller
     //
     public function index()
     {
+        // return 'yahahahaha';
         // get data from api 
-        $data = file_get_contents('http://smart-waris.test/api/nilaikedua');
-        $data = json_decode($data, true);
+        $data = [
+            "nama" => "stunggal",
+            "email" => "asd.com",
+            "nilai" => [
+                "uas" => 90,
+                "uts" => 80
+            ]
+        ];
+        // $data = json_decode($data, true);
         // return data to view
+        return response()->json($data);
         return view(
             'index',
             [
